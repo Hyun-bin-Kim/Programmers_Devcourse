@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습</title>
+    <script>
+        // 이벤트를 연결합니다.
+        window.onload = function () {
+            //변수를 선언합니다.
+            let output = '';
+            for (let i = 0; i < 256; i++) {
+                output += '<div></div>';
+            }
+            // innerHTML 속성을 사용합니다.
+            document.body.innerHTML = output;
+            // 문서 객체를 선택합니다.
+            let divs = document.querySelectorAll('div');
+            for (let i = 0; i < divs.length; i++) {
+                // 변수를 선언합니다.
+                let div = divs[i];
+                // 스타일을 적용합니다.
+                div.style.height = '2px';
+                div.style.background = 'rgb(' + i + ',' + i+230 + ',' + i + ')';
+            }
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
