@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        div.item:nth-child(1) {background: deepskyblue;}
+        div.item:nth-child(2) {background: paleturquoise;}
+        div.item:nth-child(3) {background: slateblue;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            //변수를 선언합니다.
+            let width = $('[data-role="slider"]').attr('data-width');
+            let height = $('[data-role="slider"]').attr('data-height');
+            let count = $('[data-role="slider"] div.item').length;
+
+            // 스타일을 적용합니다.
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+
+            // 변수를 선언합니다.
+            let currentPage = 0;
+            let changePage = function () {
+                $('[data-role = "slider"] > .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+
+            //이벤트를 연결합니다.
+            $('#left-button').click(function () {
+                if(currentPage > 0) {
+                    // 왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+
+            $('#right-button').click(function () {
+                if (currentPage < count - 1) {
+                    // 오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div data-role="slider" data-width="500" data-height="300">
+        <div class="container">
+            <div class="item">
+                <h1>첫 번째 제목입니다.</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem commodi fugiat non aut, unde incidunt similique eligendi? Cumque ea quis soluta id laboriosam atque cum, ullam vero, explicabo eum nulla.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur perspiciatis pariatur, magnam provident natus incidunt illum. Provident quas maxime similique debitis? Deleniti, cum quia. Sint tempora ad nihil in alias.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nesciunt! Laborum dicta placeat quibusdam quia autem esse doloribus vel possimus assumenda facilis aspernatur odit ea officia, rem quas debitis temporibus.
+                </p>
+            </div>
+            <div class="item">
+                <h1>두 번째 제목입니다.</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem commodi fugiat non aut, unde incidunt similique eligendi? Cumque ea quis soluta id laboriosam atque cum, ullam vero, explicabo eum nulla.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur perspiciatis pariatur, magnam provident natus incidunt illum. Provident quas maxime similique debitis? Deleniti, cum quia. Sint tempora ad nihil in alias.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nesciunt! Laborum dicta placeat quibusdam quia autem esse doloribus vel possimus assumenda facilis aspernatur odit ea officia, rem quas debitis temporibus.
+                </p>
+            </div>
+            <div class="item">
+                <h1>세 번째 제목입니다.</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem commodi fugiat non aut, unde incidunt similique eligendi? Cumque ea quis soluta id laboriosam atque cum, ullam vero, explicabo eum nulla.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur perspiciatis pariatur, magnam provident natus incidunt illum. Provident quas maxime similique debitis? Deleniti, cum quia. Sint tempora ad nihil in alias.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nesciunt! Laborum dicta placeat quibusdam quia autem esse doloribus vel possimus assumenda facilis aspernatur odit ea officia, rem quas debitis temporibus.
+                </p>
+            </div>
+        </div>
+    </div>
+    <button id="left-button">◀</button>
+    <button id="right-button">▶</button>
+</body>
+</html>

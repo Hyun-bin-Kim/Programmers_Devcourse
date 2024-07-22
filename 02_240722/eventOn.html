@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventOn</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <style>
+        #box {
+            border-radius: 1000px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // 스타일 변경 및 이벤트 연결
+            $('#box').css({
+                width: 300,
+                height: 300,
+                background: 'lightcoral'
+            }).on('click', function () {
+                $(this).css('background', 'thistle');
+            }).on('mouseenter', function () {
+                $(this).css('background', 'purple');
+            }).on('mouseleave', function () {
+                $(this).css('background', 'lightcoral');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

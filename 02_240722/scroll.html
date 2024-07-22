@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        //이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 문서 객체 추가 함수
+            let appendDocument = function () {
+                for (var i = 0; i < 50; i++) {
+                    // 문서 객체를 생성합니다.
+                    $('<h1>Infinity Scroll</h1>').appendTo('body');
+                }
+            };
+
+            // 초기에 문서 객체를 추가합니다.
+            appendDocument();
+
+            //이벤트를 연결하바니다.
+            $(window).scroll(function () {
+                // 변수를 선언합니다.
+                let scrollHeight = $(window).scrollTop() + $(window).height();
+                let documentHeight = $(document).height();
+
+                // 검사합니다. 
+                if (scrollHeight > documentHeight-1) { 
+                    appendDocument(); 
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=d, initial-scale=1.0">
+    <title>jQuery Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function() {
+            // 속성을 추출합니다.
+            let src = $('script').attr('src');
+
+            // 출력합니다.
+            alert(src);
+        });
+    </script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function() {
+            // 스타일 속성을 변경합니다.
+            $('h1').css('color', 'tomato');
+            $('h1').css('background', 'blue');
+        });
+    </script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function() {
+            // 속성을 지정합니다.
+            $('img').attr({
+                alt: 'jQery 라이브러리를 사용한 속성 지정',
+                src: function (index) {
+                    // 변수를 선언합니다.
+                    let size = (index + 1) * 200;
+                    
+                    // 반환합니다.
+                    return 'http://via.placeholder.com/' + size + 'x200';
+                }
+            });
+        });
+    </script>
+    //<script>
+        $(document).ready(function(){
+            // 스타일을 적용합니다.
+            $('.box').css({
+                float : 'up',
+                margin : 10,
+                width : 200,
+                height : 100,
+                backgroundColor : 'tomato'
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <img>
+    <img>
+    <img>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
