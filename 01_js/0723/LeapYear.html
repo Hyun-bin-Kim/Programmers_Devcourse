@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeapYear</title>
+    <script>
+        const input = prompt('year : ','년도 입력')
+        const year = Number(input)
+
+        function isLeapYear(year) {
+            if ((year % 4 === 0 ) && (year % 100 !== 0) || (year % 400 === 0)) {
+                return alert (`${year}년은 윤년이다.`)
+            } else {
+                return alert (`${year}년은 윤년이 아니다.`)
+            }
+
+        }
+        isLeapYear(year)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
