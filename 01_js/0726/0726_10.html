@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 연결</title>
+    <!-- 리액트 사용 준비 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 리액트를 사용하는 코드 입력 -->
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // 생성자 함수: 컴포넌트가 생성될 때 호출됨
+        constructor(props) {
+          // 부모 클래스의 생성자를 호출
+          super(props);
+          // state 초기화: 카운트를 0으로 설정
+          this.state = {
+            count: 0,
+          };
+
+          // 메서드를 현재 인스턴스에 바인딩 (this를 올바르게 참조하기 위함)
+          this.countUp = this.countUp.bind(this);
+        }
+
+        // 화면에 렌더링할 내용을 정의
+        render() {
+          return (
+            <div>
+              {/* 현재 카운트 상태를 제목으로 출력 */}
+              <h1>클릭한 횟수: {this.state.count}</h1>
+              {/* 버튼 클릭 시 countUp 메서드를 호출 */}
+              <button onClick={this.countUp}>클릭</button>
+            </div>
+          );
+        }
+
+        // 버튼 클릭 시 호출되는 메서드
+        countUp(event) {
+          // 현재 카운트 값을 1 증가시키며 상태 업데이트
+          this.setState({
+            count: this.state.count + 1,
+          });
+        }
+      }
+
+      // 출력하기
+      // React 컴포넌트를 렌더링할 컨테이너 요소 가져오기
+      const container = document.getElementById("root");
+      // React 컴포넌트를 컨테이너에 렌더링
+      ReactDOM.render(<App />, container);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static 속성과 메소드</title>
+    <script>
+      // 정사각형 클래스 정의
+      class Square {
+        // 비공개 필드 선언 (JavaScript에서는 #를 사용하여 비공개 필드를 나타냄)
+        #length;
+
+        // 클래스 비공개 정적 속성 선언 (생성된 인스턴스 수를 카운트)
+        static #counter = 0;
+
+        // 클래스 정적 속성의 getter 메서드 (클래스 인스턴스 수를 반환)
+        static get counter() {
+          return Square.#counter;
+        }
+
+        // 생성자 함수: 객체가 생성될 때 호출됨
+        constructor(length) {
+          // 생성 시 전달받은 길이를 설정하는 setter 호출
+          this.length = length;
+          // 클래스 인스턴스 수 증가
+          Square.#counter += 1;
+        }
+
+        // 정적 메서드: 특정 길이의 정사각형 둘레를 계산
+        static perimeterOf(length) {
+          return length * 4;
+        }
+
+        // 정적 메서드: 특정 길이의 정사각형 넓이를 계산
+        static areaOf(length) {
+          return length * length;
+        }
+
+        // 길이를 반환하는 getter 메서드
+        get length() {
+          return this.#length;
+        }
+
+        // 둘레를 반환하는 getter 메서드
+        get perimeter() {
+          return this.#length * 4;
+        }
+
+        // 넓이를 반환하는 getter 메서드
+        get area() {
+          return this.#length * this.#length;
+        }
+
+        // 길이를 설정하는 setter 메서드
+        set length(length) {
+          // 만약 길이가 10 이하이면 에러를 발생시킴
+          if (length < 10) {
+            throw "길이는 10보다 커야 합니다.";
+          }
+          // 비공개 필드 #length에 길이를 저장
+          this.#length = length;
+        }
+      }
+
+      // static 속성 사용하기
+      // 길이가 10인 정사각형 객체를 생성
+      const squareA = new Square(10);
+      // 길이가 20인 정사각형 객체를 생성
+      const squareB = new Square(20);
+      // 길이가 30인 정사각형 객체를 생성
+      const squareC = new Square(30);
+      // 생성된 Square 인스턴스의 수를 콘솔에 출력
+      console.log(
+        `지금까지 생성된 Square 인스턴스는 ${Square.counter}개입니다.`
+      );
+
+      // static 메소드 사용하기
+      // 한 변의 길이가 20인 정사각형의 둘레를 계산하여 콘솔에 출력
+      console.log(
+        `한 변의 길이가 20인 정사각형의 둘레는 ${Square.perimeterOf(20)}입니다.`
+      );
+      // 한 변의 길이가 30인 정사각형의 넓이를 계산하여 콘솔에 출력
+      console.log(
+        `한 변의 길이가 30인 정사각형의 넓이는 ${Square.areaOf(30)}입니다.`
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

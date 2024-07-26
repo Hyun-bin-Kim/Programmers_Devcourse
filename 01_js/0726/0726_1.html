@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private 속성과 메소드</title>
+    <script>
+      // 정사각형 클래스 정의
+      class Square {
+        // 생성자 함수: 객체가 생성될 때 호출됨
+        constructor(length) {
+          // 만약 길이가 0 이하이면 에러를 발생시킴
+          if (length <= 0) {
+            throw "길이는 0보다 커야 합니다.";
+          }
+          // 클래스의 인스턴스 속성으로 길이를 저장
+          this.length = length;
+        }
+
+        // 정사각형의 둘레를 계산하는 메서드
+        getPerimeter() {
+          return 4 * this.length;
+        }
+
+        // 정사각형의 넓이를 계산하는 메서드
+        getArea() {
+          return this.length * this.length;
+        }
+      }
+
+      // 클래스 사용하기
+      // 길이가 -10인 정사각형 객체를 생성하려고 시도함
+      const square = new Square(-10); // 이 줄에서 에러가 발생할 것임
+      // 에러가 발생하지 않는다면, 정사각형의 둘레를 콘솔에 출력
+      console.log(`정사각형의 둘레: ${square.getPerimeter()}`);
+      // 에러가 발생하지 않는다면, 정사각형의 넓이를 콘솔에 출력
+      console.log(`정사각형의 넓이: ${square.getArea()}`);
+    </script>
+  </head>
+  <body></body>
+</html>

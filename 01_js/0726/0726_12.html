@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2장 1분 퀴즈</title>
+</head>
+<body>
+    <script>
+        /* console.log('문자열이 긴 경우에는 ' + '문자열을 ' + '나눈 뒤' + '다시 합칩니다.')
+        
+        console.log(3 ** (1+2))
+        
+        console.log((5 + 4) *3 === 27)
+        
+        console.log( 1 || 0, 0 || 1, 1 ?? 0 ) */
+        
+        /* let a = 10;
+        let b = 5;
+        let c = a;
+        a = b;
+        b = c;
+        console.log('a =' + a + ', b =' + b) */
+
+        /* let cond = true
+        let value = '';
+        switch (cond) {
+            case true:
+            value = '참';
+            break;
+            case false:
+            value = '거짓';
+            break;
+        }
+        console.log(cond) */
+
+        /* let cond = true
+        let value = cond? '참' : '거짓'
+        console.log(cond) */
+        
+        /* for (let i = 0; i < 100; i++) {
+            console.log(i + 1);
+        }
+        for (let i = 1; i <= 100; i++) {
+            console.log(i)
+        } */
+        
+        for (let i = 0; i < 10; i++) {
+            for (let j =0; j < 10; j++) {
+                if(i % 2 === 0 || j % 2 === 0) {
+                    continue;
+                }
+                console.log(i , '*', j, '=', i * j);
+            }
+        }
+    </script>
+</body>
+</html>
