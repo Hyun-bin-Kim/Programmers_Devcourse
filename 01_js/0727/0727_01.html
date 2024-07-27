@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2장 1분 퀴즈</title>
+</head>
+<body>
+    <script>
+        // 9번
+        /* arr[arr.length - 3];
+        arr.at(-3); */
+
+        // 10번
+        /* const arr = ['가', '라', '다', '라', '마,', '라']
+        let index = arr.indexOf('라');
+        while (index > -1) {
+            arr.splice(index, 1);
+            index = arr.indexOf('라');
+        }
+        console.log(arr) */
+
+        // 11번
+        /* const arr = [
+        ['a', null],
+        [1, undefined],
+        [NaN, true],
+        ['', 0],
+        ];
+        console.log(arr); */
+
+        // 12번
+        /* const array = [];
+        for (let i = 0; i <5; i++) {
+            const innerArray = [];
+            for (let j = 0; j <4; j++) {
+                innerArray.push(1);
+            }
+            array.push(innerArray);
+        }
+        console.log(array); */
+
+        // 13번
+        /* const multiply = (x, y, z) => {
+            return x * y * z;
+        };
+        console.log(multiply); */
+
+        // 14번
+        const hof = (a) => (b) => (c) => {
+            return a + (b * c)
+        };
+        const first = hof(3);
+        const second = first(4);
+        const third = second(5);
+        console.log(third);
+        
+
+    </script>
+</body>
+</html>
