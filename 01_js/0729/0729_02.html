@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3장 1분 퀴즈</title>
+</head>
+<body>
+    <script>
+        // 1번
+        // setTimeout(func, 3500);
+
+        // 2번
+        /* setTimeout(() => {
+            func();
+        }, 3500); */
+        
+        // 3번
+        /* const log = () => {
+            console.log('hello');
+            setTimeout(log, 1000);
+        };
+        setTimeout(log, 1000); */
+
+        // 4번
+        // a, c, c, b, d, d
+
+        // 5번
+        await setTimeoutPromise(0);
+        const data1 = await 'a';
+        console.log(data1);
+        const data2 = await 'b';
+        console.log(data2); 
+    </script>
+</body>
+</html>

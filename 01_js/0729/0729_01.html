@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2장 1분 퀴즈</title>
+</head>
+<body>
+    <script>
+        // 15번
+        /* zerocho.name.last = '김';
+        zerocho['name']['last'] = '김'; */
+
+        // 16번
+        /* a.name = '고양이' */
+
+        // 17번
+        /* const a2 = a;
+        const c2 = c.slice();
+        const e2 = {...e};
+        const i2 = JSON.parse(JSON.stringify(i));
+        const n2 = JSON.parse(JSON.stringiify(n)); */
+
+        // 18번
+        /* const a = obj.a;
+        const c = obj.b.c;
+        const e = obj.b.d.e;
+        const { a, b: {c, d: {e}}} =obj; */
+
+        // 19번
+        /* const array = [1, 3, 5, 7];
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i], i);
+        } */
+
+        // 20번
+        // Array(5).fill().map((v,  i) => i * 2 + 3); 
+
+        // 21번
+        /* const find = (array, callback) => {
+            for(let i = 0; i <array.length; i++) {
+                if (callback(array[i])) {
+                    return array[i];
+                }
+            }
+        }; */
+
+        // 22번
+        /* const filter = (array, callback) => {
+            const result = [];
+            for (let i = 0; ii < array.length; i++) {
+                if (callback(array[i])) {
+                    result.push(array[i]);
+                }
+            }
+        }; */
+
+        // 23번
+        // {1: 10,  2: 20, 3: 30, 4: 40, 5: 50}
+
+        // 24번
+        /* const array = [null, 'hello', null, undefined, false];
+        const some = array.some((value) => value !== null);
+        console.log(some); */
+
+        // 25번
+        /* const array = [null, 'hello', null, undefined, false];
+        let some = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] !== null) {
+                some = true;
+                break;
+            }
+        };
+        console.log(some); */
+
+        // 26번
+        /* class Human {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            sayName() {
+                console.log(this.name);
+            }
+            sayAge() {
+                console.log(this.age);
+            }
+        } */
+
+        // 27번
+        class Human {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            sayName() {
+                console.log(this.name);
+            }
+            sayAge() {
+                console.log(this.age);
+            }
+        }
+
+        class Programmer extends Human {
+            constructor(name, age, languages) {
+                super(name, age);
+                this.availableLanguages = languages;
+            }
+            showAvailableLanguages() {
+                console.log(this.availableLanguages);
+            }
+        }
+
+        const programmer = new Programmer('제로초', 29, ['html', 'css', 'js'],);
+        programmer.showAvailableLanguages();
+    </script>
+</body>
+</html>
