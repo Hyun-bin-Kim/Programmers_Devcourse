@@ -151,21 +151,55 @@
 // const derived = new Derived('Lee');
 // console.log(derived.sayHi());
 
-const Book = (function(){
-    function Book(title, author, price) {
-        this.title = title,
-        this.author = author,
-        this.price = price;
+// const Book = (function(){
+//     function Book(title, author, price) {
+//         this.title = title,
+//         this.author = author,
+//         this.price = price;
+//     }
+//     Book.prototype.date = function() {
+//         console.log('date : 출판일');
+//     };
+//     Book.prototype.page = function() {
+//         console.log('page : 페이지 수');
+//     };
+//     return Book;
+// }());
+// const book = new Book('타이틀', '작가','가격');
+// console.log(book);
+// book.date();
+// book.page();
+
+// class Person {
+//     constructor(name, age){
+//         this.name = name
+//         this.age = age
+//     }
+//     textIntroduce() {
+//         return `안녕하세요 제 이름은 ${this.name}이고, 나이는 ${this.age}살 입니다.`
+//     }
+// }
+// const person1 = new Person('김현빈', 28);
+// console.log(person1.textIntroduce());
+
+class Calculator{
+    static add(a, b){
+        return a + b;
+    }   
+    static substract(a, b){
+        return a - b;
     }
-    Book.prototype.date = function() {
-        console.log('date : 출판일');
-    };
-    Book.prototype.page = function() {
-        console.log('page : 페이지 수');
-    };
-    return Book;
-}());
-const book = new Book('타이틀', '작가','가격');
-console.log(book);
-book.date();
-book.page();
+}
+console.log(Calculator.add(1, 3))
+console.log(Calculator.substract(1, 3))
+
+function Calculator () {}
+
+Calculator.add = function(a, b){
+    return a + b;
+}
+Calculator.substract = function(a, b){
+    return a - b;
+}
+console.log(Calculator.add(2, 5))
+console.log(Calculator.substract(2, 5))
