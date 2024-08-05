@@ -59,10 +59,24 @@
 // const {address : {city}} = user;
 // console.log(city)
 
-const person = {
-    name: 'Kim',
-    age: '28'
-}
-const {name: userName, age: userAge} = person;
+// const person = {
+//     name: 'Kim',
+//     age: '28'
+// }
+// const {name: userName, age: userAge} = person;
 
-console.log(`이름: ${userName}, 나이: ${userAge}`)
+// console.log(`이름: ${userName}, 나이: ${userAge}`)
+
+// 문제 2
+// const car = {brand: "현대", model: "아이오닉", year: 2023};
+// const newCar = {...car, model: "전기차"};
+// console.log(newCar);
+
+// 문제 3
+const array1 = [1, 2, 3, 4, 5]; 
+const array2 = [4, 5, 6, 7, 8];
+const array3 = [...array1, ...array2];
+console.log(array3);
+const array4 = [...new Set(array3)];
+console.log(array4);
+
