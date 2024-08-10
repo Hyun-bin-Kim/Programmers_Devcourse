@@ -58,12 +58,12 @@ img {
   background-color: #592b18;
 }
 .btn.btn--gold {
-  color: #d9aa8a;
-  border-color: #d9aa8a;
+  color: #b26b42;
+  border-color: #b26b42;
 }
 .btn.btn--gold:hover {
   color: #fff;
-  background-color: #d9aa8a;
+  background-color: #b26b42;
 }
 .btn.btn--white {
   color: #fff;
@@ -330,7 +330,7 @@ header .tablet_gnb .tablet_gnb_right .tablet_gnb_sub_menu{
 /*visual*/
 .main-visual-wrap{
   width: 100%;
-  background: url("../images/2024_august_bg.jpg") no-repeat;
+  background: url("../images/2024_august_bg.png") no-repeat;
   background-position: center;
   background-size: cover;
   height: 32vw;
@@ -402,9 +402,9 @@ font-size:14px;
 }
 .sbRewards .inner .rewards-left {
 margin: 0;
-width: 25%;
+width: 22%;
 text-align: center;
-margin-right: 5%;
+margin-right: 2%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -414,7 +414,7 @@ width: 176px;
 text-align: center;
 }
 .sbRewards .inner .rewards-right {
-width: 70%;
+width: 75%;
 letter-spacing: -1px;
 }
 .sbRewards .inner .rewards-right .text-top {
@@ -464,6 +464,159 @@ position: relative;
 font-size: 14px;
 }
 
+
+/*main-bean*/
+.main-bean{
+background: url("../images/25th_summer_bean_bg.jpg");
+height: 550px;
+background-size: cover;
+background-position: center center;
+}
+.main-bean .inner{
+display: flex;
+align-items: center;
+height: 100%;
+}
+.main-bean .inner .main-bean-left{
+width: 50%;
+}
+.main-bean .inner .main-bean-right{
+width: 50%;
+margin-top: -135px;
+}
+.main-bean .inner .main-bean-right a{
+margin-top: 50px;
+}
+
+/*reserve-bean*/
+.reserve-bean{
+background:url("../images/240521_pc_reserve_bg_1.jpg");
+background-position: center center;
+background-size: cover;
+height: 400px;
+}
+.reserve-bean .inner{
+width: 100%;
+height: 100%;
+}
+.reserve-bean .inner .reserve-bean-left{
+width: 387px;
+position: absolute;
+top: 82px;
+left: 190px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.reserve-bean .inner .reserve-bean-left a{
+margin-top: 20px;
+}
+
+.reserve-bean .main-bean-visaul .main-bean-visual-pc{
+position: absolute;
+right: 20px;
+bottom: 0;
+}
+
+/*pick your*/
+.pickYour{
+background: url("../images/2024_august_pick_bg.png") no-repeat;
+background-position: center center;
+background-size: cover;
+background-attachment: fixed;
+height: 800px;
+}
+.pickYour .inner{
+display: flex;
+height: 100%;
+align-items: center;
+}
+.pickYour .inner .pick-left{
+width: 362px;
+display: flex;
+flex-direction: column;
+align-items: end;
+}
+.pickYour .inner .pick-left img:nth-child(2){
+margin: 30px 0;
+}
+.pickYour .pick-right{
+width: 65%;
+margin-left: 5%;
+}
+.pickYour .pick-right img{
+width: 90%;
+}
+
+/*magazine*/
+.magazine{
+height: 400px;
+background: url("../images/reserve_bg_pc.png")center/cover no-repeat;
+}
+.magazine .inner{
+display: flex;
+}
+.magazine .inner .magazine-left{
+width: 588px;
+position: absolute;
+left: 200px;
+top: 135px;
+z-index: 1;
+}
+.magazine .inner .magazine-left a{
+margin: 20px 110px;
+}
+.magazine .inner .magazine-right{
+position: absolute;
+right: 50px;
+}
+/*store*/
+.store{
+height: 400px;
+overflow: hidden;
+background: url(../images/store_bg.jpg) center/cover no-repeat;
+}
+.store .inner{
+height: 400px;
+}
+.store .inner > div {
+position: absolute;
+}
+.store .storeImg1 {
+background: url(../images/store_exp_img03.png);
+width: 343px;
+height: 142px;
+left: 50%;
+margin-left: -150px;
+margin-top: -50px;
+}
+.store .storeImg2 {
+background: url(../images/221212_main_story_1.png)no-repeat;
+width: 363px;
+height: 310px;
+}
+.store .storeImg3 {
+background: url(../images/221212_main_story_2.png)no-repeat;
+width: 225px;
+height: 225px;
+top: 148px;
+left: 212px;
+}
+.store .storeImg4 {
+background: url(../images/store_exp_img04.png)no-repeat;
+width: 230px;
+height: 102px;
+bottom: 0;
+right: 0;
+}
+.store .store-text {
+width: 374px;
+right: 100px;
+padding-top: 100px;
+}
+.store .store-text a {
+margin-top: 20px;
+}
 @media screen and (max-width: 1200px){
 .btn-slogan a{
   width: 128px;
@@ -476,7 +629,14 @@ header > .inner {
 header .tablet_gnb{
   display: none;
 }
+.pc_img{
+  display: block;
 }
+.m_img{
+  display: none;
+}
+}
+
 @media screen and (min-width: 641px) and (max-width: 960px) {
 header > .inner {
     display: none;
@@ -484,14 +644,114 @@ header > .inner {
 .main-visual-wrap{
   margin-top: 70px;
 }
+.sbRewards .inner .rewards-right{
+  width: 60%;
+}
+.sbRewards .inner .rewards-left{
+  width: 40%;
+}
+.sbRewards .inner .rewards-right .btn_signin_wrap {
+  position: static;
+  margin-top: 20px;
+  
+}
+.sbRewards .inner .rewards-right .btn_egift_wrap{
+  position: static;
+  margin-top: 20px;
+ 
+}
+.main-bean{
+  background: url("../images/25th_summer_bean_bg_m.jpg")cover no-repeat;
+  height: 125vw;
+}
+.main-bean .inner{
+  display: unset;
+}
+.pc_img{
+  display: none;
+}
 }
 @media screen and (min-width: 481px) and (max-width: 640px) {
 header > .inner {
     display: none;
 }
+.main-visual-wrap{
+  margin-top: 70px;
+}
+.sbRewards .inner .rewards-right{
+  width: 60%;
+}
+.sbRewards .inner .rewards-left{
+  width: 40%;
+}
+.sbRewards .inner{
+  display: unset;
+  text-align: center;
+}
+.sbRewards .inner .rewards-right{
+  width: 90%;
+  margin: 0 5%;
+}
+.sbRewards .inner .rewards-left{
+  width: 100%;
+
+}
+.sbRewards .inner .rewards-right .btn_signin_wrap {
+  position: static;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.sbRewards .inner .rewards-right .btn_egift_wrap{
+  position: static;
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+}
+.main-bean{
+  background: url("../images/25th_summer_bean_bg_m.jpg")cover no-repeat;
+  height: 125vw;
+}
+.pc_img{
+  display: none;
+}
 }
 @media screen and (max-width: 480px) {
 header > .inner {
     display: none;
+}
+.main-visual-wrap{
+  margin-top: 70px;
+}
+.sbRewards .inner{
+  display: unset;
+  text-align: center;
+}
+.sbRewards .inner .rewards-right .btn_signin_wrap {
+  position: static;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.sbRewards .inner .rewards-right .btn_egift_wrap{
+  position: static;
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+}
+.sbRewards .inner .rewards-right{
+  width: 100%;
+  margin: 0 5%;
+}
+.sbRewards .inner .rewards-left{
+  width: 100%;
+  
+}
+.main-bean{
+  background: url("../images/25th_summer_bean_bg_m.jpg")cover no-repeat;
+  height: 125vw;
+}
+.pc_img{
+  display: none;
 }
 }
