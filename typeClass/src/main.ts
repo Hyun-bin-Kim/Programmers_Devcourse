@@ -1,149 +1,93 @@
-// const add = function(a:number, b:number): number {
-//     return a + b
-// }
+// const obj = { name: "kim" } as const;
+// const arr = [1, 2, 'string'];
 
-// const add2 = function(a:number, b:number): number {
-//     return a + b
-// }
-// const result1 = add2(1, 2);
+// const arr1: string[] = ['1', '2', '3'];
+// const arr2: Array<number> = [1, 2, 3];
 
-// const str = 'hello'
-// const num = 123;
-// const bool = false;
-// const n = null;
-// const u = undefined;
-// const sym = Symbol('sym');
-// const obj = {hello: 'world'};
+// const tuple: readonly [number, boolean, string] = [1, true, 'hello'];
 
-// let str = 'hello'
-// let num = 123;
-// let bool = false;
-// let n = null;
-// let u = undefined;
-// let sym = Symbol('sym');
-// let obj = {hello: 'world'};
+// const strNumBools: [string, number, ... boolean[]] = ['hello', 1, false, true, false];
+// const arr3 = ['hello', true];
+// const arr4 = [1, ... arr3];
 
-// let str: 'hello' = 'hello';
-// str = 'world'
+// const [a, ... rest] = ['hello', 1, 2, 3];
+// const [b, ... rest2]: [string, ... number[]] = ['hello', 1, 2, 3];
 
-// const obj = {name: 'kim'};
-// const arr = [1, 2, 'three'];
 
-// obj.name = 'lee'
-// arr.push(4);
-
-// const arr1: string[] = ['1', '2', '3']
-// const arr2: Array<number> = [1, 2, 3]
-
-// const arr3 = [1, '3', 3];
-// const arr4 = []
-
-// const tuple: readonly[number, boolean, string] = [1, true, 'hello'];
-
-// tuple.push('hello');
-// console.log(tuple);
-
-// const strNumBools : [string, number, ...boolean[]] = ['hello', 1, false, true, false]
-
-// const[a, ...rest] = ['hello', 1, 2, 3];
-// const[b, ...rest2]: [string, ...number[]] = ['hello', 1, 2, 3];
-
-// function add(x: number, y:number) {
-//     return x + y;
-// }
-
-// const str1: String = 'hello'
-// const str2: string = str1
-
-// function add(x:number, y:number){return x + y}
-// const result1: add(1, 2) = add(1, 2);
-// const result2: typeof add(1, 2) = add(1, 2);
-// const add: typeof add = (x: number, y: number) => x + y
-
-// let strNum: string | number = 'hello';
-// strNum = 1;
-// const arr = [1, '2', 3];
+// function add(x: number, y: number) { return x + y }
+// const add2: typeof add = (x: number, y: number) => x + y;
 
 // function unionType(value: string | number): number {
-//     if(typeof value === 'string'){
+//     if (typeof value === 'string') {
 //         return parseInt(value);
 //     }
+
 //     return value;
 // }
-// unionType(1);
+
 // unionType('1');
+// unionType(1);
 
-// const arr: string[] = [];
+// const x: any = '123';
+// const any1 = x + 1;
+// const any2 = x - 1;
+// const any3 = x + '1';
 
-// const arr = [];
-// arr.push('1');
-// arr;
-// arr.push(3);
-// arr;
-
-// const a: any = '123';
-// const any1 = a + 1;
-// const any2 = a - 1;
-// const any3 = a * 1;
-// const any4 = a + '1';
-// const any5 = a / 1;
-
-// fetch('url').then< {data: string} >((response) => {
+// fetch('url').then< { data: string } >((response) => {
 //     return response.json();
 // }).then((result) => {
 
-// })
-// const result: {hello: string} = JSON.parse('{"hello" : "json"}')
+// });
 
-// try{
+// const result: { hello: string } = JSON.parse('{"hello": "json"}');
 
-// }catch(e) {
+// try {
+
+// } catch(e) {
 //     const error = e as Error;
+
 //     console.log(error.message);
 // }
 
-// const str: {} = 'hello';
-// const num: {} = 123;
-// const bool: {} = true;
-// const obj: {} = {name: 'kim'};
-// const arr: {} = [];
-// const func: {} = () => {}; 
-// const n: {} = null;
-// const u: {} = undefined;
-// obj.name;
-// arr[0];
+// const func: () => void = () => 3;
+// const value = func();
+
+// let person: string = 'Kim';
+
+// function add3(a: number, b: number): number {
+//     return a + b;
+// }
+
+// function isEven(num: number): boolean {
+//     return num % 2 === 0
+// }
 
 // function func1() {
-//     throw new Error('error');
+//     throw new Error('에러');
 // }
-// const return1 = func1();
+
+// // const result1: never = func1();
+
 // const func2 = () => {
-//     throw new Error('error');
+//     throw new Error('에러');
 // }
+
 // const result2 = func2();
-// function infinity() {
+
+// function infinite() {
 //     while(true) {
-//         console.log('반복')
+//         console.log('반복');
 //     }
 // }
+
 // function strNum(param: string | number) {
-//     if(typeof param === 'string'){
+//     if (typeof param === 'string') {
 
-// }else if (typeof param === "number"){
+//     } else if (typeof param === 'number') {
 
-// }else {
-//     param;
-// }}
-
-// type Person = {
-//     name: string,
-//     age: number,
-//     married: boolean
-// }
-// const person2: Person = {
-//     name: 'kim',
-//     age: 28,
-//     married: false
+//     } else {
+//         param;
+//     }
 // }
 
 // interface Person {
@@ -153,302 +97,325 @@
 // }
 
 // const person1: Person = {
-//     name: 'kim',
+//     name: 'Kim',
 //     age: 28,
-//     married:false
+//     married: false
 // }
 
 // interface Func {
-//     (x: number, y:number): number;
+//     (x: number, y: number): number;
 // }
 
-// const add: Func = (x, y) => x + y;
+// const add4: Func = (x, y) => x + y;
 
-// interface Arr{
-//     length: number,
+// interface Arr {
+//     length: number;
 //     [key: number]: string;
 // }
-// const arr = ['1', '2', '3']
 
-// const obj = {}
-// obj[123] = '숫자 키';
-// console.log(obj);
-// console.log(Object.keys(obj));
+// const arr5: Arr = ['1', '2', '3'];
 
 // interface NoProp {}
-// const obj2: NoProp = {
-//     txt: '에러 안남',
-// }
-// const result: NoProp = "안녕"
-// const result2: NoProp = undefined;
 
-// type Animal = {
+// const obj2: NoProp = {
+//     txt: '에러 안 남'
+// }
+
+// const resultX: NoProp = '안녕';
+// // const resultY: NoProp = null;
+
+// interface Animal {
 //     name: string;
 // }
+
 // interface Bear extends Animal {
 //     honey: boolean;
 // }
-// interface Tiger extends Animal {
-//     stripe: boolean;
-// }
-// interface BearTiger extends Bear,Tiger{}
-
-// type honey = BearTiger['honey']
-// type stripe = BearTiger['stripe'];
 
 // const bear1: Bear = {
-//     name: 'bear',
+//     name: 'honey bear',
 //     honey: true
 // }
 
-// interface Merge{
-//     one: string,
-//     two: string,
+// type Bear2 = Animal& {
+//     honey: boolean
 // }
-// interface Merge2 extends Merge {
-//     one: 'h' | 'w';
-//     two: '123'
+
+// const bear2: Bear = {
+//     name: 'honey bear',
+//     honey: true
 // }
 
 // namespace Exam {
 //     export interface Inner {
-//         test:string;
-//     }
+//         test: string;
+// }
+
 //     export type test2 = number;
 // }
-// const ex1:Exam.Inner = {
+
+// const ex1: Exam.Inner = {
 //     test: 'hello'
 // }
-// const ex2:Exam.test2 = 123;
 
-// interface Exam {
-//     hello: string;
-//     world?: number;
-//     readonly check: boolean;
-//     readonly multiply?: symbol;
-// }
-// const example: Exam = {
-//     hello: 'hi',
-//     world: 123,
-//     check: true,
-// }
-// example.first;
-// example.check = false;
+// const ex2: Exam.test2 = 123;
 
-// const obj = {
+// const obj4 = {
 //     hello: 'world',
 //     name: 'Kim',
 //     age: 28
 // }
-// type Keys = keyof typeof obj;
-// type Values = typeof obj['hello' | 'age];
 
-// type Arr = [1, 2, 3];
-// type First = Arr[0];
-// type Length = Arr['length'];
-// type Arr2 = (string | boolean)[];
-// type El = Arr2[number];
-
-// type HelloHi = {
-//     [key in 'hello' | 'hi']: string;
-// }
-
-// type Tuple = [1, 2, 3];
-// type CopyTuple = {
-//     [key in keyof Tuple]: Tuple[key];
-// }
-// const copyTuple: CopyTuple = [1, 2, 3];
-
-// type Arr = number[];
-// type CopyArr = {
-//     [key in keyof Arr]: Arr[key];
-// }
-// const copyArr:CopyArr = [4, 3, 2];
+// type Keys = keyof typeof obj4;
+// type Values = typeof obj4[Keys];
 
 // type A = string | boolean;
 // type B = boolean | number;
 // type C = A & B;
 // type D = {} & (string | null);
 // type F = unknown | {};
-// type G = never | {};
+// type G = never & {};
 // type H = {a: 'b'} & number;
 // type I = null & {a: 'b'};
 // type J = {} & string;
 
-// let a: readonly string[] = ['hi', 'readonly'];
-// let b: string[] = ['hi', 'normal'];
-// a = b;
-// b = a;
 
-// type Optional = {
-//     a?: string;
-//     b?: string;
-// }
-// type Essential = {
-//     a: string;
-//     b: string;
-// }
-// const o: Optional = {
-//     a: 'hello',
-// }
-// const e: Essential = {
-//     a: 'hello',
-//     b: 'world',
-// }
-// const o2: Optional = e;
-// const e2: Essential = o;
-
-// interface Money {
-//     _type: 'money';
-//     amount: number;
-//     unit: string;
+// function add5(a: string, b: string): string;
+// function add5(a: number, b: number): number;
+// function add5(a: any, b: any): any {
+//     return a + b;
 // }
 
-// interface Liter{
-//     _type: 'liter';
-//     amount: number;
-//     unit: string;
-// }
-// const liter: Liter = {amount: 1, unit: 'liter', _type: 'liter'};
-// const circle: Money = liter;
+// add5('hello', 'world');
+// add5(4, 5);
 
-// interface Person<T, A>{
-//     type: 'human',
-//     race: 'yellow',
-//     name: T,
-//     age: A,
+// function example(param: string | null): number;
+// function example(param: string): string;
+// function example(param: string | null): string | number {
+//     if (param) {
+//         return 'string'
+//     } else {
+//         return 123;
+//     }
 // }
 
-// interface Kim extends Person<'kim', 20>{}
-// interface Lee extends Person<'lee', 22>{}
+// const result5 = example('what');
 
-// interface Array<T>{
-//     [key: number]: T,
-//     length:number,
-// }
-// const numbers: Array<number> = [1, 2, 3, 4]
-
-// const personE = <N, A>(name: N, age: A) => ({
-//     type: 'human',
-//     race: 'yellow',
-//     name,
-//     age,
-// })
-
-// interface PersonI<N, A>{
-//     type: 'human',
-//     race: 'yellow',
-//     name: N,
-//     age: A,
+// interface Added {
+//     (x: number, y: number): number;
+//     (x: string, y: string): string;
 // }
 
-// type PersonT<N, A> = {
-//     type: 'human',
-//     race: 'yellow',
-//     name: N,
-//     age: A,
+// const added: Added = (x: any, y: any) => x + y;
+
+// added(1, 2);
+// added('1', '2');
+// // added(1, '2');
+
+// type El <T> = T extends (infer E)[] ? E : never;
+// type Str = El <string[]>;
+// type NumBool = El <(number | boolean)[]>;
+
+// type ElementType <T> = T extends (infer U)[] ? U : never;
+// type NumberArray = number[];
+// type Ele = ElementType <NumberArray>;
+
+// interface Human {
+//     name: string;
+//     age: number;
+//     married: boolean;
 // }
 
-// type Kim = PersonI<'kim', 28>
-// interface Lee extends PersonT<'lee', 22>{}
+// class Person implements Human {
+//     name;
+//     age;
+//     married;
 
-// class Person<N, A>{
-//     name: N;
-//     age: A;
-//     constructor(name: N, age: A){
+//     constructor(name: string, age: number, married: boolean) {
 //         this.name = name;
 //         this.age = age;
-//     }
-//     method<B>(param: B){}
-// }
-
-// interface PersonI<N, A> {
-//     type: 'human',
-//     race: 'yellow',
-//     name: N,
-//     age: A,
-//     method: <B>(param: B) => void
-// }
-
-// interface Person<N = string, A = number>{
-//     type: 'human',
-//     race: 'yellow',
-//     name: N,
-//     age: A,
-// }
-// type Person1 = Person
-// type Person2 = Person<number>
-// type Person3 = Person<number, boolean>
-
-// interface Person<N = string, A = number>{
-//     type: 'human',
-//     race: 'yellow',
-//     name: N,
-//     age: A,
-// }
-// const personE = <N, A = unknown>(name:N, age:A): Person<N, A> => ({
-//     type: 'human',
-//     race: 'yellow',
-//     name,
-//     age,
-// })
-
-// const Kim = personE('kim', 28);
-
-// function values<T>(initial: T[]){
-//     return{
-//         hasValue(value: T){
-//             return initial.includes(value)
-//         }
+//         this.married = married
 //     }
 // }
-// const savedValues = values(['a', 'b', 'c']);
 
-// savedValues.hasValue('s');
+// class Parent {
+//     name?: string;
+//     readonly age: number;
+//     protected married: boolean;
+//     private value: number;
 
-// interface V0 {
-//     value: any;
-// }
-// const f = (): V0 => {
-//     return {value: 'test'}
-// }
+//     constructor(name: string, age: number, married: boolean) {
+//         this.name = name;
+//         this.age = age;
+//         this.married = married;
+//         this.value = 0;
+//     }
 
-// type A1 = string;
-// type B1 = A1 extends string ? number : boolean;
-
-// type A2 = number;
-// type B2 = A1 extends string ? number : boolean;
-
-// interface X{
-//     x: number;
-// }
-// interface XY{
-//     x: number;
-//     y: number;
-// }
-// interface YX extends X{    
-//     y: number;
+//     changeAge(age: number) {
+//         this.age = age; // 읽기 전용 속성이므로 할당할 수 없음
+//     }
 // }
 
-// type A = XY extends X ? string : number;
-// type B = YX extends X ? string : number;
+// class Child extends Parent {
+//     constructor(name: string, age: number, married: boolean) {
+//         super(name, age, married);
+//     }
 
-// type result = [1] extends [string] ? true : false;
+//     sayName() {
+//         console.log(this.name);
+//     }
 
-// type Start = string | number;
-// type New = Start extends string | number ? Start[] : never;
-// let n: New = ['hi'];
-// n = [123];
+//     sayMarried() {
+//         console.log(this.married);
+//     }
 
-// type New<A> = A extends string | number ? string[] : never;
-// type Never = New<number>;
-// type Arr = New<string>;
+//     sayValue() {
+//         console.log(this.value); 
+//         // private 속성이므로 Parent 클래스 내에서만 액세스할 수 있음
+//     }
+// }
 
-function add(a: string, b: string): string;
-function add(a: number, b: number): number;
-function add(a: any, b: any): any{
-    return a + b;
-}
+// const child = new Child('Kim', 28, false);
 
-add("hello", "world");
-add(1, 1);
+// child.name;
+// child.married; // married 속성은 보호된 속성이며 Parent 및 해당 하위 클래스 내에서만 액세스할 수 있음
+// child.value; // private 속성이므로 Parent 클래스 내에서만 액세스할 수 있음
+
+
+// class Man {
+//     play() {
+//         console.log('play');
+//     }
+
+//     study() {
+//         console.log('study');
+//     }
+// }
+
+// class Employee extends Man {
+//     work() {
+//         console.log('work');
+//     }
+
+//     override study() {
+//         console.log('study');
+//     }
+// }
+
+// class Signature {
+//     [propName: string]: string | number | undefined;
+//     static [propName: string]: boolean;
+// }
+
+// const sig = new Signature();
+// sig.hello = 'world';
+// Signature.isGood = true;
+
+// class Person2 {
+//     age: number;
+//     married: boolean;
+
+//     constructor(age: number, married: boolean) {
+//         this.age = age;
+//         this.married = married
+//     }
+
+//     sayAge() {
+//         console.log(this.age);
+//     }
+
+//     sayMarried(this: Person) {
+//         console.log(this.married);
+//     }
+
+//     sayCallback(callback: (this: this) => void) {
+//         callback.call(this);
+//     }
+// }
+
+// abstract class AbstractPerson {
+//     name: string;
+//     age: number;
+//     married: boolean = false;
+//     abstract value: number;
+
+//     constructor(name: string, age: number, married: boolean) {
+//         this.name = name;
+//         this.age = age;
+//         this.married = married;
+//     }
+
+//     sayName() {
+//         console.log(this.name);
+//     }
+
+//     abstract sayAge(): void;
+//     abstract sayMarried(): void;
+// }
+
+// class RealPerson extends AbstractPerson {
+//     value: number = 0;
+
+//     sayAge() {
+//         console.log(this.age);
+//     }
+
+//     sayMarried() {
+//         console.log(this.married);
+//     }
+// }
+
+// interface Address {
+//     email: string;
+//     address: string;
+// }
+
+// const me: Partial <Address> = {};
+// const you: Partial <Address> = { email: 'john@abc.com' };
+// const all: Address = { email: 'john@abc.com', address: 'abcabc' };
+
+// interface Todo {
+//     title: string;
+//     description: string;
+//     completed: boolean;
+// }
+
+// type TodoPreview = Pick <Todo, 'title' | 'completed'>;
+
+// const todo: TodoPreview = {
+//     title: 'clean room',
+//     completed: false
+// }
+
+// interface Todo2 {
+//     title: string;
+//     description: string;
+//     completed: boolean;
+//     createdAt: number;
+// }
+
+// type TodoPreview2 = Omit <Todo2, 'description'>;
+
+// const todo2: TodoPreview2 = {
+//     title: 'clean room',
+//     completed: false,
+//     createdAt: 12345
+// }
+
+// type T0 = ReturnType<() => string> // string
+// type T1 = ReturnType<(s: string) => void> // void
+
+// function fn(str: string) {
+// 	return str;
+// }
+
+// const a: ReturnType<typeof fn> = 'hello';
+// const b: ReturnType<typeof fn> = true;
+
+type Users = "kim" | "lee" | "park";
+type UserName = { [K in Users]: string };
+const userNameInfo: UserName = {
+  kim: "kims",
+  lee: "lees",
+  park: "parks",
+};

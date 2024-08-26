@@ -90,3 +90,60 @@ type Test2 = IsString<number>;
 // 문제 12
 type StringS<T> = T extends string ? T : never;
 type Test3 = StringS<string | boolean | number>;
+
+// 문제 13
+
+function removeD <T> (arr: T[]): T[] {
+    return Array.from(new Set(arr));
+}
+
+// 문제 14
+
+function returnLen(param: any[]): number;
+function returnLen(param: string): number;
+function returnLen(param: any): number {
+    return param.length;
+}
+
+returnLen('123123');
+// 문제 15
+
+type FirstElement <T> = T extends [infer U, ... any[]] ? U : never;
+type Tuple1 = [string, number, boolean];
+
+type FirstOne = FirstElement <Tuple1>;
+
+// 문제 17
+
+class Animal2 {
+    private name: string;
+    protected age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name,
+        this.age = age;
+    }
+
+    getName(): string {
+        return this.name;
+    }
+
+    getAge(): number {
+        return this.age;
+    }
+}
+
+class Dogs extends Animal2 {
+    breed: string;
+
+    constructor(name: string, age: number, breed: string) {
+        super(name, age),
+        this.breed = breed;
+    }
+
+    bark(): string {
+        return 'Woof!';
+    }
+}
+
+const myCat = new Dogs('땅콩이', 3, '고양이');
