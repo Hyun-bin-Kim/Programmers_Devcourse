@@ -1,11 +1,18 @@
-import React from "react";
+import React from 'react';
 
-const ChildComponent = ({ children }) => {
-  return (
-    <div>
-      <h1>Children 값은 {children} 입니다.</h1>
-    </div>
-  );
+const ChildComponent = (props) => {
+    function updateValue(e){
+        console.log(e.target.value);
+        props.onAddData(e.target.value);
+    }
+
+    return (
+        <>
+          <h2>
+            입력 : <input type='text' onChange={updateValue}/>
+          </h2>  
+        </>
+    );
 };
 
 export default ChildComponent;

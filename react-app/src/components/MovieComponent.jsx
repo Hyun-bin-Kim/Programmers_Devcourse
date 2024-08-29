@@ -7,7 +7,7 @@ function MovieComponent(props) {
         <div>
             <h1>제목: {title}</h1>
             <h1>개봉: {open}</h1>
-            <img src={poster}/>
+            <img src={poster} alt="poster" width="250px"/>
             <hr/>
         </div>
     );
