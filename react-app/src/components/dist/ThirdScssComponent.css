@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* 전역 변수 */
+.container {
+  /* 지역 변수 */
+  background-color: red;
+}
+
+.hello {
+  color: black;
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+div {
+  background-color: yellowgreen;
+  /* 값이 변수에 저장 */
+  width: 200px;
+  /* 값이 괄호로 묶여 있음 */
+  height: 50px;
+  /* 다른 연산과 같이 사용 */
+  font-size: 20px;
+}

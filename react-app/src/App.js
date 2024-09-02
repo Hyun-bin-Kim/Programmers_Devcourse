@@ -6,7 +6,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import FirstProps from './components/FirstProps';
 import Wrapper from './components/Wrapper';
-import MovieComponent from './components/MovieComponent';
+import MovieComponent from './MovieComponent';
 import FoodMenu from './components/FoodMenu';
 import DefaultProps from './components/DefaultProps';
 import IntroductionComponents from './components/IntroductionComponents';
@@ -18,145 +18,210 @@ import ChangeProps from './components/ChangeProps';
 import { useState } from 'react';
 import UserID from './components/UserID';
 import UserPW from './components/UserPW';
+import CheckBox from './components/CheckBox';
+import Submit from './components/Submit';
+import ImageComponent from './components/ImageComponent';
+import Prac07 from './components/Prac07';
+import Button1 from './components/Button1';
+import Button2 from './components/Button2';
+import StyledComponent from './components/StyleComponent';
+import FirstScssComponent from './components/FirstScssComponent'
+import SecondScssComponent from './components/SecondScssComponent'
+import ThirdScssComponent from './components/ThirdScssComponent'
+import NestingComponent from './components/NestingComponent';
+import ParentSelector from './components/ParentSelector';
+import Operation from './components/Operation';
 
 function App() {
-  const name = 'HyunBin'
-  const style = {
-    backgroundColor: 'red',
-    fontSize: '12px'
-  }
+  // const name = 'HyunBin'
+  // const style = {
+  //   backgroundColor: 'red',
+  //   fontSize: '12px'
+  // }
 
-  const movieList = [
-    {
-      title: "행복의 나라",
-      open: "2024.08.14",
-      poster: "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88454/88454_1000.jpg"
-    },
-    {
-      title: "에이리언-로물루스",
-      open: "2024.08.14",
-      poster: "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88170/88170_1000.jpg"
-    },
-    {
-      title: "트위스터스",
-      open: "2024.08.14",
-      poster: "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88442/88442_1000.jpg"
-    }
-  ];
+  // const movieList = [
+  //   {
+  //     title: "행복의 나라",
+  //     open: "2024.08.14",
+  //     poster: "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88454/88454_1000.jpg"
+  //   },
+  //   {
+  //     title: "에이리언-로물루스",
+  //     open: "2024.08.14",
+  //     poster: "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88170/88170_1000.jpg"
+  //   },
+  //   {
+  //     title: "트위스터스",
+  //     open: "2024.08.14",
+  //     poster: "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88442/88442_1000.jpg"
+  //   }
+  // ];
 
-  const todoList = [
-    {taskName: '빨래하기', finished: false},
-    {taskName: '공부하기', finished: false}
-  ];
+  // const todoList = [
+  //   {taskName: '빨래하기', finished: false},
+  //   {taskName: '공부하기', finished: false}
+  // ];
   
-  const moneyList = [1000, 2000, 1000, 4000];
+  // const moneyList = [1000, 2000, 1000, 4000];
 
-  const names = ['HTML', 'CSS', 'Javascript', 'React'];
-  const nameList = names.map((name,index) => {return <li key={index}>{name}</li>})
+  // const names = ['HTML', 'CSS', 'Javascript', 'React'];
+  // const nameList = names.map((name,index) => {return <li key={index}>{name}</li>})
   
-  // const [1, 2] = useState(초기값)
-  // 초기값 : 숫자, 문자열, 객체, 배열, 함수
-  const [인사, 인사변경] = useState(["안녕하세요", "재미있는", "리액트"]);
-  // font, setFont
-  // name, setName
-  const [font, setFont] = useState("50px")
-  const fontStyle = {
-    // 키(카멜케이스) : 값
-    fontSize : font
-  }
+  // // const [1, 2] = useState(초기값)
+  // // 초기값 : 숫자, 문자열, 객체, 배열, 함수
+  // const [인사, 인사변경] = useState(["안녕하세요", "재미있는", "리액트"]);
+  // // font, setFont
+  // // name, setName
+  // const [font, setFont] = useState("50px")
+  // const fontStyle = {
+  //   // 키(카멜케이스) : 값
+  //   fontSize : font
+  // }
 
-  const [value, setValue] = useState("안녕하세요");
-  function printConsole() {
-    console.log(value)
-    setValue('반가워요')
-  } 
+  // const [value, setValue] = useState("안녕하세요");
+  // function printConsole() {
+  //   console.log(value)
+  //   setValue('반가워요')
+  // } 
 
-  const [number, setNumber] = useState(0);
-  function upCounter() {
-    setNumber(number + 1);
-  }
-  function resetCounter() {
-    setNumber(0)
-  }
+  // const [number, setNumber] = useState(0);
+  // function upCounter() {
+  //   setNumber(number + 1);
+  // }
+  // function resetCounter() {
+  //   setNumber(0)
+  // }
 
-  const [hello, status] = useState("안녕하세요");
-  function login() {
-    status("로그인되었습니다")
-  }
-  function logout() {
-    status("로그아웃되었습니다")
-  }
+  // const [hello, status] = useState("안녕하세요");
+  // function login() {
+  //   status("로그인되었습니다")
+  // }
+  // function logout() {
+  //   status("로그아웃되었습니다")
+  // }
 
-  const person1 = {name: 'hyunbin'};
-  const person2 = {...person1, age: 20};
-  const person3 = {...person2, region: 'seoul'}
-  const person4 = {region: 'busan', ...person3}
+  // const person1 = {name: 'hyunbin'};
+  // const person2 = {...person1, age: 20};
+  // const person3 = {...person2, region: 'seoul'}
+  // const person4 = {region: 'busan', ...person3}
 
-  const object1 = {a:1, b:2};
-  const object2 = {a:1, b:2};
-  console.log(object1 === object2)
+  // const object1 = {a:1, b:2};
+  // const object2 = {a:1, b:2};
+  // console.log(object1 === object2)
 
-  const [msg, setMsg] = useState(["안녕", "하이"])
-  function changMsg() {
-    const newMsg = [...msg]
-    newMsg[1] = "Hello";
-    setMsg(newMsg)
-  }
+  // const [msg, setMsg] = useState(["안녕", "하이"])
+  // function changMsg() {
+  //   const newMsg = [...msg]
+  //   newMsg[1] = "Hello";
+  //   setMsg(newMsg)
+  // }
 
-  const [childMsg, setChildMsg] = useState("");
-  function addDataHandler(data){
-    setChildMsg(data)
-  }
+  // const [childMsg, setChildMsg] = useState("");
+  // function addDataHandler(data){
+  //   setChildMsg(data)
+  // }
 
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
-  function addIdHandler(id){
-    setId(id)
-  }
-  function addPwHandler(pw){
-    setPw(pw)
-  }
-  function loginCheck(){
-    if(id==="hyunbin" && pw ==="1234"){
-      alert("로그인 성공")
-    }else if(id !== "hyunbin" && pw !=="17234"){
-      alert("로그인 실패")
-    }else if(id !== "hyunbin"){
-      alert("아이디가 일치하지 않습니다.")
-    }else{
-      alert("비밀번호가 일치하지 않습니다.")
-    }
-  }
+  // const [id, setId] = useState("");
+  // const [pw, setPw] = useState("");
+  // function addIdHandler(id){
+  //   setId(id)
+  // }
+  // function addPwHandler(pw){
+  //   setPw(pw)
+  // }
+  // function loginCheck(){
+  //   if(id==="hyunbin" && pw ==="1234"){
+  //     alert("로그인 성공")
+  //   }else if(id !== "hyunbin" && pw !=="17234"){
+  //     alert("로그인 실패")
+  //   }else if(id !== "hyunbin"){
+  //     alert("아이디가 일치하지 않습니다.")
+  //   }else{
+  //     alert("비밀번호가 일치하지 않습니다.")
+  //   }
+  // }
 
-  // 문제 1
-  const [numbers, setNumbers] = useState([5, 10, 15, 20, 25, 30]);
-  function remove(){
-    const newNumbers = [...numbers];
-    newNumbers.forEach((number, index) => {
-      if(number % 2 === 0 ){
-        newNumbers.splice(index, 1);
-      }
-    });
-    setNumbers(newNumbers);
-  }
+  // const [v, setV] = useState("안녕하세요");
+  // const [fonts,setFonts] = useState("50px");
+  // function changeFont(size){
+  //   setFonts(size)
+  // }
+  // const fontStyle1 = {
+  //   fontSize : fonts
+  // }
 
-  // 문제 2
-  const fruits = [
-    { name: 'apple', quantity: 2, price: 1000 },
-    { name: 'banana', quantity: 3, price: 2500 },
-    { name: 'orange', quantity: 5, price: 5000 }
-  ];
-  const searchName = 'banana';
-  const foundFruit = fruits.find(fruit => fruit.name === searchName);
+  // const [value1, setValue1] = useState("글자색 바꾸기");
+  // const [color,setColor] = useState("black");
+  // function setFontColor(color){
+  //   setColor(color)
+  // }
+  // const fontStyle2 = {
+  //   color : color
+  // }
+
+  // const [text, setText] = useState("");
+  // function printConsole1(e){
+  //   console.log(e.target.value)
+  // }
+  // function printBrowser(e){
+  //   setText(e.target.value)
+  // }
+
+  // const [name, setName] = useState("");
+  // const [message, setMessage] = useState("");
+
+  // const [form, setForm] = useState({username : "", message : ""})
+  // function onChangeHandler(e){
+  //   const newForm = {...form, [e.target.name] : e.target.value}
+  //   setForm(newForm);
+  // }
+
+  // const [message, setMessage] = useState({title: "제목", color: "black"});
+  // function changeMessage(msg){
+  //   const newMessage = {...message}
+  //   newMessage.title = msg
+  //   newMessage.color = "red"
+
+  //   setMessage(newMessage)
+  // }
+  // function showMessage(){
+  //   alert(message.title);
+  // }
+
+  // const productList = [
+  //   {
+  //     name: "모자",
+  //     price: "10000"
+  //   }, 
+  //   {
+  //     name: "신발",
+  //     price: "30000"
+  //   }, 
+  //   {
+  //     name: "가방",
+  //     price: "80000"
+  //   }
+  // ];
   
-  // 문제 3
-  const array = ["javascript", "css", "react", "html"];
-  const findLongWords = () => {
-    const longWords = array.filter(word => word.length >= 5);
-    const result = longWords.map(word => `${word} : ${word.length}`).join('\n');
-    return result;
-  };
-  const result = findLongWords();
+  // const regionList = [
+  //   {
+  //     region: "서울",
+  //     eng: "Seoul",
+  //   },
+  //   {
+  //     region: "부산",
+  //     eng: "Busan",
+  //   },
+  //   {
+  //     region: "제주",
+  //     eng: "Jeju",
+  //   },
+  // ];
+
+  // const [count, setCount] = useState(0);
+  // function onCounterHandler() {
+  //   setCount((prev) => prev + 1);
+  // }
 
   return (
     // <div style={style}>
@@ -307,23 +372,100 @@ function App() {
     //   <button onClick={loginCheck}>Login</button> 
     // </>
 
-    // 문제 1
     // <div>
-    //   <h2>배열의 남은 요소 : {numbers.map((number, index) => (<h4 key={index}>{number}</h4>))}</h2>
-    //   <button onClick={remove}>Remove Even Numbers</button>
+    //   <h1 style={fontStyle1}>{v}</h1>
+    //   {/* <button onClick={()=>{changeFont('100px')}}>글자크기변경</button> */}
+    //   <button onClick={()=>{setFonts('100px')}}>글자크기변경</button>
     // </div>
 
-    // 문제 2
     // <div>
-    //         <h3><strong>이름:</strong> {foundFruit.name}</h3>
-    //         <h3><strong>수량:</strong> {foundFruit.quantity}</h3>
-    //         <h3><strong>가격:</strong> {foundFruit.price}</h3>
+    //   <h1 style={fontStyle2}>{value1}</h1>
+    //   <button onClick={()=>{setFontColor('red')}}>빨간색</button>
+    //   <button onClick={()=>{setFontColor('green')}}>초록색</button>
+    //   <button onClick={()=>{setFontColor('blue')}}>파란색</button>
     // </div>
 
-    // 문제 3
-    <div>
-      <pre>{result}</pre>
-    </div>
+    // <>
+    //   <h1>{text}</h1>
+    //   <input type='text' onChange={(e) => {console.log(e.target.value)}}></input>
+    //   <input type='text' onChange={(e) => {setText(e.target.value)}}></input>
+    // </>
+
+    // <>
+    //   <h1>사용자 이름 : {name}</h1>
+    //   <h1>내용 : {message}</h1>
+    //   <input type='text' name="username" onChange={(e) => {setName(e.target.value)}} />
+    //   <input type='text' name="message" onChange={(e) => {setMessage(e.target.value)}} />
+    // </>
+
+    // <>
+    //   <h1>사용자 이름 : {form.username}</h1>
+    //   <h1>내용 : {form.message}</h1>
+    //   <input type='text' name="username" onChange={onChangeHandler} />
+    //   <input type='text' name="message" onChange={onChangeHandler} />
+    // </>
+
+    // <>
+    //   <h1 style={{color : message.color}}>{message.title}</h1>
+    //   <hr/>
+    //   <input type='text' onChange={(e)=>{changeMessage(e.target.value)}} />
+    //   <button onClick={showMessage}>출력</button>
+    // </>
+
+    // <>
+    //   <CheckBox list={productList} />
+    // </>
+
+    // <>
+    //   <Submit region={regionList}/>
+    // </>
+
+    // <>
+    //   <ImageComponent />
+    // </>
+
+    // <>
+    //   <div className='title'>
+    //     <h1>Total Count : {count}</h1>
+    //   </div>
+    //   <div className='container'>
+    //     <Prac07 onCount={onCounterHandler}/>
+    //     <Prac07 onCount={onCounterHandler}/>
+    //   </div>
+    // </>
+
+    // <div>
+    //   <Button1 />
+    //   <Button2 />
+    // </div>
+
+    // <>
+    //   <StyledComponent />
+    // </>
+
+    // <>
+    //   <FirstScssComponent />
+    // </>
+
+    // <>
+    //   <SecondScssComponent />
+    // </>
+
+    // <>
+    //   <ThirdScssComponent />
+    // </>
+
+    // <>
+    //   <NestingComponent />
+    // </>
+
+    // <>
+    //   <ParentSelector />
+    // </>
+
+    <>
+      <Operation />
+    </>
   );
 }
 
