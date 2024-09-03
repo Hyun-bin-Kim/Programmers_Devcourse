@@ -15,7 +15,7 @@ import PropTypesComponents from './components/ProTypesComponents';
 import TodoTask from './components/TodoTask';
 import MoneyList from './components/MoneyList';
 import ChangeProps from './components/ChangeProps';
-import { useState } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import UserID from './components/UserID';
 import UserPW from './components/UserPW';
 import CheckBox from './components/CheckBox';
@@ -31,6 +31,18 @@ import ThirdScssComponent from './components/ThirdScssComponent'
 import NestingComponent from './components/NestingComponent';
 import ParentSelector from './components/ParentSelector';
 import Operation from './components/Operation';
+import Count from './components/Count';
+import AddName from './components/AddName';
+import Menu from './components/Menu';
+import AddNamePerformance from './components/AddNamePerformance';
+import AddNameUesEffect from './components/AddNameUseEffect';
+import Prac02 from './components/Prac02';
+import UseRefVSUseState from "./components/UseRefVSUseState";
+import Prac03 from './components/Prac03';
+import UseRefVSVariable from './components/UserRefVSVariable';
+import Prac04 from './components/Prac04';
+import UseRefDom from './components/UseRefDom';
+import Prac05 from './components/Prac05';
 
 function App() {
   // const name = 'HyunBin'
@@ -222,6 +234,45 @@ function App() {
   // function onCounterHandler() {
   //   setCount((prev) => prev + 1);
   // }
+
+  // const [count, setCount] = useState(0);
+  // const increment = () => {
+  //   console.log("Before updating: ", count); // 0
+  //   setCount(count + 1); // 상태 업데이트 요청 -> 15ms
+  //   // 0
+  // };
+
+  // useEffect(() => {
+  //   console.log("After updating: ", count); // count가 업데이트 될 때마다 실행
+  // }, [count]);
+
+  // const style = {
+  //   margin: "30px",
+  // };
+  // const [name, setName] = useState("hyunbin");
+  // const [age, setAge] = useState(10);
+
+  // const nameRef = useRef()
+  // const ageRef = useRef()
+
+  const [hardNumber, setHardNumber] = useState(1);
+  const [easyNumber, setEasyNumber] = useState(1);
+  const hardSum = useMemo(() => hardCalculator(hardNumber), [hardNumber]);
+  //hardCalculator(hardNumber); //함수 실행
+  const easySum = easyCalculator(easyNumber);
+
+  function hardCalculator(number){
+    // number = hardNumber
+    // 어렵고 복잡하고 시간이 오래걸리는 작업
+    for(let i = 0; i < 10; i++) {
+      console.log(i)
+    }
+    return number + 10000;
+  }
+  function easyCalculator(number){
+    console.log("쉬운 계산중")
+    return number + 1;
+  }
 
   return (
     // <div style={style}>
@@ -463,9 +514,81 @@ function App() {
     //   <ParentSelector />
     // </>
 
-    <>
-      <Operation />
-    </>
+    // <>
+    //   <Operation />
+    // </>
+
+    // <div>
+    //   <Count/>
+    // </div>
+
+    // <div>
+    //   <AddName/>
+    // </div>
+
+    // <div>
+    //   <Menu/>
+    // </div>
+
+    // <div>
+    //   <AddNamePerformance/>
+    // </div>
+
+    // <div>
+    //   <AddNameUesEffect/>
+    // </div>
+
+    // <div>
+    //   <Prac02/>
+    // </div>
+
+    // <div>
+    //   <p>Count: {count}</p>
+    //   <button onClick={increment}>Increment</button>
+    // </div>
+
+    // <div>
+    //   <UseRefVSUseState />
+    // </div>
+
+    // <div>
+    //   <Prac03/>
+    // </div>
+
+    // <div>
+    //   <UseRefVSVariable />
+    // </div>
+
+    // <div>
+    //   <Prac04/>
+    // </div>
+
+    // <div>
+    //   <UseRefDom />
+    // </div>
+
+    // <div>
+    //   <Prac05/>
+    // </div>
+
+    // <div>
+    //   <div style={style}>
+    //     <h1>input 태그 value 값 지정</h1>
+    //     이름 : <input type='text' ref={nameRef} value={name} onChange={(e) => setName(e.target.value)}/>
+    //     <br/>
+    //     나이 : <input type='number' ref={ageRef} value={age} onChange={(e) => setAge(e.target.value)} />
+    //   </div>
+    // </div>
+
+    <div>
+      <h3>어려운 계산기</h3>
+      <input 
+        type='number'
+        value={hardNumber}
+        onChange={(e) => setHardNumber(parseInt(e.target.value))}
+      />
+      <span> {hardNumber} + 10000 = {hardSum} </span>
+    </div>
   );
 }
 
