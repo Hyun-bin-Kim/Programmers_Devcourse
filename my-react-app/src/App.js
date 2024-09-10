@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound";
 import Product from "./pages/Product";
 import Root from "./pages/Root";
 import ProductInfo from "./pages/ProductInfo";
+import Book from "./pages/Book"
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/product", element: <Product /> },
       { path: "/product/:productId", element: <ProductInfo /> },
+      { path: "/book", element: <Book /> },
     ],
   },
 ]);

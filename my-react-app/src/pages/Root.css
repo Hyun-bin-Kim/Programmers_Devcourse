@@ -1,0 +1,22 @@
+/* Root 컴포넌트의 기본 스타일 */
+.root-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 페이지 전체 높이 */
+    background-color: #f4f4f4;
+  }
+  
+  /* 메뉴 스타일 */
+  .menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* 콘텐츠 영역 스타일 */
+  .outlet {
+    flex: 1; /* 남은 공간을 모두 차지 */
+    padding: 20px;
+  }
+  
