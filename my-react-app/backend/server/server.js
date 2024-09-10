@@ -1,15 +1,23 @@
 const express = require("express");
-
+const connectDB = require("./mongoConn");
 const app = express();
-
-// body-parser
-app.use(express.json()); //클라이언트 -> 서버로 데이터 요청 보냈을 때 json형식으로 변환
-
-//cors 설정
 const cors = require("cors");
-app.use(cors());
+const books = require("./router/books");
 
-//rotuer 설계
-const index = require("./router/index");
-app.use("/", index);
-app.listen(5000, () => console.log("Server is running on 127.0.0.1:5000"));
+const PORT = 5000;
+
+connectDB()
+  .then(() => {
+    console.log("MongoDB 연결 성공");
+    app.use(express.json());
+    app.use(cors());
+    app.use("/books", books);
+    app.listen(PORT, () => {
+      console.log("Server Running at http://127.0.0.1:5000");
+    });
+  })
+  .catch((err) => {
+    // 연결 실패 시 프로세스 종료
+    console.error("MongoDB 연결 오류:", err);
+    process.exit(1);
+  });
